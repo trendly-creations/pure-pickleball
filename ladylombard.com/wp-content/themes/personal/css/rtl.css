@@ -1,0 +1,227 @@
+body,
+.owl-item{
+	direction: rtl;
+}
+.owl-carousel{
+	direction: ltr;
+}
+.menus ,
+.head-sec.with-ad .logo,
+.header-search > input {
+    float: right;
+}
+.menu-sec.white .header-search,
+.header-style1.white .social-btns {
+    float: left;
+}
+.heading1 > h1 > i {
+    float: right;
+    margin-left: 15px;
+    margin-right: 0;
+}
+.post-title1 > span {
+    float: right;
+    margin-left: 25px;
+    margin-right: 0;
+}
+.post-sec1 > .social-btns {
+    left: auto;
+    right: 0;
+}
+.post-sec1 {
+    padding-left: 0;
+    padding-right: 100px;
+}
+.date > i {
+    float: right;
+    margin-left: 8px;
+    margin-right: 0;
+}
+.post-details1 > a{
+	float: right;
+}
+.recent-post > ul > li > span {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+.blog-about > span {
+    float: right;
+    margin-left: 15px;
+    margin-right: 0;
+}
+.post-mas-thumb > a > span {
+    float: right;
+    margin-left: 15px;
+    margin-right: 0;
+}
+.post-fancy-slide > a{
+	float: right;
+}
+.fancy-metas > li, .fancy-metas > li i {
+    float: right;
+}
+.fancy-metas > li i {
+    margin-left: 22px;
+    margin-right: 0;
+}
+.categories > ul > li > a {
+    float: right;
+    text-align: right;
+}
+.categories > ul > li:before {
+    left: auto;
+    right: -20px;
+}
+.sidebar-post > span {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+.pagination {
+    float: right;
+}
+.plan-metas > li > i {
+    float: right;
+    margin-left: 8px;
+    margin-right: 0;
+}
+.post-author2-detail > a {
+    float: right;
+}
+.picture-modern .post-title > span {
+    float: right;
+    margin-left: 15px;
+    margin-right: 0;
+}
+.views-status > span {
+    float: right;
+}
+.blog-style8 .blog-desc {
+    -webkit-border-radius: 0 3px 0 0;
+    -moz-border-radius: 0 3px 0 0;
+    -ms-border-radius: 0 3px 0 0;
+    -o-border-radius: 0 3px 0 0;
+    border-radius: 0 3px 0 0;
+}
+.blog8-metas > li > span {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+.blog8-metas > li span:before {
+    left: -6px;
+    right: auto;
+}
+.blog8-metas > li span:after {
+    left: -2px;
+    right: auto;
+}
+.plan-metas {
+    float: right;
+}
+.blog-list-desc > a{
+	float: right;
+}
+.latest-post-sec .owl-buttons,
+.trendy-carousal .owl-buttons {
+    left: 0;
+    right: auto;
+}
+.video-heading.style2 > span {
+    left: auto;
+    right: 0;
+}
+.video-heading.style2 {
+    padding-left: 20px;
+    padding-right: 100px;
+}
+.video-heading .social-btns > li {
+    float: right;
+}
+.contact-info > ul > li > i, .contact-info > ul > li > strong {
+    float: right;
+}
+.contact-info > ul > li > i,
+.contact-info > ul > li > strong {
+    margin-left: 10px;
+    margin-right: 0;
+}
+.top-menu {
+    float: right;
+}
+.header-style1.white .social-btns{
+    margin: 0;
+}
+.menu-sec.dark .header-search{
+    float: left;
+}
+.large-btn{
+    float: right;
+}
+.experience-sec > span {
+    left: auto;
+    right: 0;
+}
+.experience-sec > span:before {
+    content: "\f104";
+    left: 0;
+    margin-left: -10px;
+    margin-right: 0;
+    right: auto;
+}
+.experience-sec {
+    padding-left: 0;
+    padding-right: 112px;
+}
+.experience > span {
+    float: left;
+}
+.experience > h3 {
+    float: right;
+}
+.search-result > form button {
+    left: 0;
+    right: auto;
+}
+.search-result > form input[type="text"] {
+    padding: 0 35px 0 80px;
+}
+.most-views h6 {
+    left: 0;
+    right: auto;
+}
+.general-metas > li > i {
+    margin-left: 8px;
+    margin-right: 0;
+}
+.post-author-details > span {
+    float: right;
+}
+.post-author-infos {
+    padding-left: 0;
+    padding-right: 20px;
+}
+.project-carousal .owl-buttons {
+    right: auto;
+    left: 0;
+}
+.comment {
+    padding-left: 0;
+    padding-right: 107px;
+}
+.avatar {
+    left: auto;
+    right: 0;
+}
+.leave-comment form .submit{
+    float: right;
+}
+.category-author > ul > li > span {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+.tags-bar > li {
+    float: right;
+}

@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<sections>
+		<jollyanytheme translate="label">
+			<label>Jollyany Theme</label>
+			<tab>mgscore</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>10</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label">
+					<label>General</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<color translate="label">
+							<label>Theme Color</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_color</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</color>
+						
+						<right_to_left translate="label">
+							<label>Use right to left layout</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</right_to_left>
+						
+						<background translate="label">
+                            <label>Background Image</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">jollyany/background</upload_dir>
+                            <base_url type="media" scope_info="1">jollyany/background</base_url>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </background>
+						
+						<logo translate="label">
+                            <label>Logo</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">jollyany/logo</upload_dir>
+                            <base_url type="media" scope_info="1">jollyany/logo</base_url>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </logo>
+						
+						<footer_logo translate="label">
+                            <label>Footer Logo</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">jollyany/logo</upload_dir>
+                            <base_url type="media" scope_info="1">jollyany/logo</base_url>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_logo>
+						
+						
+						<layout translate="label">
+							<label>Layout style</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_layout</source_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</layout>
+						
+						<theme_style translate="label">
+							<label>Theme style</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_style</source_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</theme_style>
+						
+						<header translate="label">
+							<label>Header Version</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_header</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</header>
+						
+						<footer translate="label">
+							<label>Footer Version</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_footer</source_model>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</footer>
+						
+						<featured translate="label">
+							<label>Featured Product Attribute</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_featured</source_model>
+							<sort_order>70</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</featured>
+						
+						<brands translate="label">
+							<label>Brands Attribute</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_brands</source_model>
+							<sort_order>90</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</brands>
+						
+						<bestselling translate="label">
+							<label>Best Selling Product Attribute</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_featured</source_model>
+							<sort_order>80</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</bestselling>
+					</fields>
+				</general>
+				
+				<slideshow translate="label">
+					<label>Homepage Slideshow</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>15</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<effect translate="label">
+							<label>Effect</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_efect</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</effect>
+						
+						<delay translate="label">
+                            <label>Delay</label>
+                            <frontend_type>text</frontend_type>
+							<comment>The time one slide stays on the screen in Milliseconds</comment>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </delay>
+						
+						<pause_hover translate="label">
+                            <label>Pause On hover</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_boolean</source_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pause_hover>
+						
+					</fields>
+				</slideshow>
+				
+				<contact>
+					<label>Contact Map</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>20</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						
+						<enabled translate="label">
+							<label>Display google map</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						
+						
+						<html translate="label">
+							<label>Html</label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</html>
+						
+						<image translate="label">
+                            <label>Pin image</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">jollyany</upload_dir>
+                            <base_url type="media" scope_info="1">jollyany</base_url>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </image>
+						
+						<latitude translate="label">
+                            <label>Latitude</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </latitude>
+						
+						<longitude translate="label">
+                            <label>Longitude</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </longitude>
+					</fields>
+				</contact>
+				
+				<twitter translate="label">
+					<label>Twitter config</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>40</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+					
+						<token translate="label">
+                            <label>Token</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </token>
+						
+						<token_secret translate="label">
+                            <label>Token Secret</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </token_secret>
+						
+						<consumer_key translate="label">
+                            <label>Consumer Key</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </consumer_key>
+						
+						<consumer_secret translate="label">
+                            <label>Consumer Secret</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </consumer_secret>
+						
+						<title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </title>
+						<user translate="label">
+                            <label>Twitter user</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </user>
+						
+						<count translate="label">
+                            <label>Count display</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                        </count>
+					</fields>
+				</twitter>
+				
+				<catalog translate="label">
+					<label>Catalog category</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>45</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<price_slider translate="label">
+							<label>Active price slider</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</price_slider>
+						
+						<more_view translate="label">
+							<label>Active ajax load more products</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</more_view>
+						
+						<pricing_attributes translate="label">
+                            <label>Pricing attributes</label>
+                            <frontend_type>multiselect</frontend_type>
+							<source_model>jollyanytheme/system_config_source_attributes</source_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pricing_attributes>
+					</fields>
+				</catalog>
+				
+				<product_tabs translate="label">
+					<label>Product Tabs</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>50</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<description translate="label">
+							<label>Show description</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<comment>Show description on tabs</comment>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						
+						<aditional translate="label">
+							<label>Show Aditional Information</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<comment>Show aditional information on tabs</comment>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</aditional>
+						
+						<reviews translate="label">
+							<label>Show Reviews</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<comment>Show reviews on tabs</comment>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</reviews>
+						
+						<tags translate="label">
+							<label>Show Product Tags</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<comment>Show product tags on tabs</comment>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</tags>
+						
+						<custom_tab_one translate="label">
+							<label>Custom tab 1</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_tabs</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_tab_one>
+						
+						<custom_tab_one_title translate="label">
+							<label>Custom tab 1 title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_tab_one_title>
+						
+						<custom_tab_one_value translate="label">
+							<label>Custom tab 1 value</label>
+							<frontend_type>text</frontend_type>
+							<comment>attribute code or static block identifier</comment>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_tab_one_value>
+						
+						<custom_tab_two translate="label">
+							<label>Custom tab 2</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_tabs</source_model>
+							<sort_order>8</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_tab_two>
+						
+						<custom_tab_two_title translate="label">
+							<label>Custom tab 2 title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>9</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_tab_two_title>
+						
+						<custom_tab_two_value translate="label">
+							<label>Custom tab 2 value</label>
+							<frontend_type>text</frontend_type>
+							<comment>attribute code or static block identifier</comment>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_tab_two_value>
+						
+						<custom_tab_three translate="label">
+							<label>Custom tab 3</label>
+							<frontend_type>select</frontend_type>
+							<source_model>jollyanytheme/system_config_source_tabs</source_model>
+							<sort_order>11</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_tab_three>
+						
+						<custom_tab_three_title translate="label">
+							<label>Custom tab 3 title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>12</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_tab_three_title>
+						
+						<custom_tab_three_value translate="label">
+							<label>Custom tab 3 value</label>
+							<frontend_type>text</frontend_type>
+							<comment>attribute code or static block identifier</comment>
+							<sort_order>13</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</custom_tab_three_value>
+					</fields>
+				</product_tabs>
+			</groups>
+		</jollyanytheme>
+	</sections>
+</config>

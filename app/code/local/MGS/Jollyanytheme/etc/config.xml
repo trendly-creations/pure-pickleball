@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MGS_Jollyanytheme>
+            <version>0.1.0</version>
+        </MGS_Jollyanytheme>
+    </modules>
+
+    <adminhtml>
+		<menu>
+			<mgscore module="mgscore"> 
+				<children>
+					<jollyany module="jollyanytheme">
+						<title>Jollyany Theme</title>
+						<sort_order>1</sort_order>
+						<action>adminhtml/system_config/edit/section/jollyanytheme</action>
+					</jollyany>
+				</children>
+			</mgscore>
+		</menu>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<jollyanytheme translate="title">
+											<title>Jollyany Theme</title>
+											<sort_order>900</sort_order>
+										</jollyanytheme>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+    </adminhtml>   
+    <global>
+        <models>
+            <jollyanytheme>
+                <class>MGS_Jollyanytheme_Model</class>
+            </jollyanytheme>
+        </models>
+		
+		<resources>
+            <jollyanytheme_setup>
+                <setup>
+                    <module>MGS_Jollyanytheme</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </jollyanytheme_setup>
+            <jollyanytheme_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </jollyanytheme_write>
+            <jollyanytheme_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </jollyanytheme_read>
+        </resources>
+        
+        <blocks>
+            <jollyanytheme>
+                <class>MGS_Jollyanytheme_Block</class>
+            </jollyanytheme>
+			<page>
+                <rewrite>
+                    <html_header>MGS_Jollyanytheme_Block_Html_Header</html_header>
+					<html_footer>MGS_Jollyanytheme_Block_Html_Footer</html_footer>
+					<html_topmenu>MGS_Jollyanytheme_Block_Html_Topmenu</html_topmenu>
+                </rewrite>
+            </page>
+			<core>
+				<rewrite>
+					<messages>MGS_Jollyanytheme_Block_Messages</messages>
+				</rewrite>
+			</core>
+			
+			<catalog>
+				<rewrite>
+					<layer_filter_price>MGS_Jollyanytheme_Block_Catalog_Layer_Filter_Price</layer_filter_price>
+				</rewrite>
+			</catalog>
+        </blocks>
+		<models>
+			<catalog>
+				<rewrite>
+					<layer>MGS_Jollyanytheme_Model_Catalog_Layer</layer>
+				</rewrite>
+			</catalog>
+			<catalogsearch>
+				<rewrite>
+					<layer>MGS_Jollyanytheme_Model_Catalogsearch_Layer</layer>
+				</rewrite>
+			</catalogsearch>
+		</models>
+        <helpers>
+            <jollyanytheme>
+                <class>MGS_Jollyanytheme_Helper</class>
+            </jollyanytheme>
+        </helpers>
+    </global>
+	<frontend>
+		<routers>
+			<slider>
+				<use>standard</use>
+				<args>
+					<module>MGS_Jollyanytheme</module>
+					<frontName>jollyanytheme</frontName>
+				</args>
+			</slider>
+			<catalog>
+				<args>
+					<modules>
+						<MGS_Jollyanytheme before="Mage_Catalog">MGS_Jollyanytheme_Catalog</MGS_Jollyanytheme>
+					</modules>
+				</args>
+			</catalog>
+			<catalogsearch>
+				<args>
+					<modules>
+						<MGS_Jollyanytheme before="Mage_CatalogSearch">MGS_Jollyanytheme_CatalogSearch</MGS_Jollyanytheme>
+					</modules>
+				</args>
+			</catalogsearch>
+		</routers>
+	</frontend>
+	<default>
+		<jollyanytheme>
+			<general>
+				<color>yellow</color>
+				<layout>wide</layout>
+				<header>header</header>
+				<footer>footer</footer>
+			</general>
+			
+			<slideshow>
+				<effect>fade</effect>
+				<delay>9000</delay>
+				<pause_hover>on</pause_hover>
+			</slideshow>
+			
+			<twitter>
+				<token>428922587-MJUkfkbfWNCELVlTSQfeq18MXdTAV527BG4nZ1FL</token>
+				<token_secret>Ux292IZ7aRq9BIDE7ULLvb5cCSlYpn1yM1BjQ78yY</token_secret>
+				<consumer_key>ylGkAsuHN2tMqNkPVA7qgg</consumer_key>
+				<consumer_secret>RrJUfZfdbj4qod66ahGZgUY3pflGDHQEjsa48ymF80o</consumer_secret>
+				<title>Latest Tweet</title>
+				<user>magentosulution</user>
+				<count>2</count>
+			</twitter>
+			
+			<contact>
+				<enabled>1</enabled>
+				<html><![CDATA[<div class="infobox"><h3 class="title">ArrowHiTech</h3><span>72 Trần Thái Tông</span><br>Cầu Giấy, Hà Nội, Vietnam <br>+84 4 6674 0683</p></div></div></div>]]></html>
+				<latitude>21.029224</latitude>
+				<longitude>105.785362</longitude>
+			</contact>
+			
+			<catalog>
+				<price_slider>1</price_slider>
+				<more_view>1</more_view>
+			</catalog>
+			
+			<product_tabs>
+				<description>1</description>
+				<aditional>1</aditional>
+				<reviews>1</reviews>
+				<tags>1</tags>
+			</product_tabs>
+		</jollyanytheme>
+	</default>
+</config>

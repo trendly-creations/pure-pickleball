@@ -1,0 +1,10 @@
+<?php $parallax = Mage::getModel('cms/block')->load('jollyany-custom-services'); ?>
+<?php if($parallax->getId() && $parallax->getIsActive() && $parallax->getContent()!=''): ?>
+	<?php $backgroundImage = $this->helper('jollyanytheme')->getCustomServicesBackground() ?>
+	<section id="one-parallax" class="parallax" style="background-image: url('<?php echo $backgroundImage ?>');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+		<div class="overlay">
+			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('jollyany-custom-services')->toHtml() ?>
+		</div>
+	</section>
+<?php endif ?>
+

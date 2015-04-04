@@ -1,0 +1,51 @@
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+	
+?>
+<div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row">
+		<?php $_category = Mage::registry('current_category') ?>
+		<?php if(!$_productCollection->count()): ?>
+			<div class="alert alert-warning">
+				<?php echo $this->__('There are no products matching the selection.') ?>
+			</div>
+		<?php else: ?>
+			<div class="blog-masonry">
+				<div class="col-lg-12">
+					<div class="doc">
+						<div class="pricing_boxes">
+							<?php foreach ($_productCollection as $_product): ?>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="pricing_detail">
+                                        <span class="priceamount"><?php echo str_replace('.00','',Mage::helper('core')->currency($_product->getPrice(),true,false)); ?><br>Monthly</span>
+                                        <header>
+                                            <h3><?php echo $_product->getName() ?></h3>
+                                        </header>
+                                        <div class="pricing_info">
+											<?php 
+												$attributes = Mage::getStoreConfig('jollyanytheme/catalog/pricing_attributes');
+												$arrAttr = explode(',',$attributes);
+											?>
+											<?php if(count($arrAttr)>0): ?>
+												<ul>
+													<?php foreach($arrAttr as $_attributeCode): ?>
+														<?php $_attribute = Mage::getModel('eav/entity_attribute')->loadByCode('catalog_product', $_attributeCode); ?>
+														<li><?php echo $this->__('%s %s', $_product->getData($_attributeCode), $_attribute->getFrontendLabel()) ?></li>
+													<?php endforeach ?>
+												</ul>
+											<?php endif ?>
+                                            <footer>
+                                                <a class="btn btn-primary btn-lg" href="<?php echo $this->helper('checkout/cart')->getAddUrl($_product); ?>"><?php echo $this->__('Purchase') ?></a>
+                                            </footer>
+                                        </div>
+                                    </div>
+								</div>
+							<?php endforeach ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php endif ?>
+	</div>
+</div>

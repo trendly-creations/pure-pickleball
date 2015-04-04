@@ -1,0 +1,81 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+<?php if (!Mage::registry('current_category')) return ?>
+<?php $currentCat = Mage::registry('current_category') ?>
+<?php $_categories = $this->getCurrentChildCategories() ?>
+<?php $_count = is_array($_categories)?count($_categories):$_categories->count(); ?>
+<?php $pageLayout = $currentCat->getPageLayout() ?>
+<?php if($pageLayout=='one_column'): ?>
+	<?php $class="col-md-3" ?>
+<?php elseif($pageLayout=='three_columns'): ?>
+	<?php $class="col-md-4" ?>
+<?php else: ?>
+	<?php $class="col-md-6" ?>
+<?php endif ?>
+<h1><?php echo $currentCat->getName() ?></h1>
+<hr />
+
+<?php if($_count): ?>
+	<div class="row">
+		<ul class="portfolio-list sort-destination" data-sort-id="portfolio">
+			<?php foreach ($_categories as $_category): ?>
+				<?php $_category = Mage::getModel('catalog/category')->load($_category->getId()) ?>
+				<?php if($_category->getIsActive()): ?>			
+				<li class="<?php echo $class ?> isotope-item websites">
+					<div class="portfolio-item img-thumbnail">
+						<a href="<?php echo $this->getCategoryUrl($_category) ?>" class="thumb-info">
+							<?php if($_category->getThumbnail()): ?>
+								<?php $src = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'catalog/category/'.$_category->getThumbnail();?>
+							<?php else: ?>
+								<?php $src = $this->getSkinUrl('images/blank.jpg');?>
+							<?php endif ?>
+							<img alt="" class="img-responsive" src="<?php echo $src ?>">
+							<span class="thumb-info-title">
+								<span class="thumb-info-inner"><?php echo $this->escapeHtml($_category->getName()) ?></span>
+								<span class="thumb-info-type"><?php echo $this->__('%s products',$_category->getProductCount()) ?></span>
+							</span>
+							<span class="thumb-info-action">
+								<span title="Universal" href="<?php echo $this->getCategoryUrl($_category) ?>" class="thumb-info-action-icon"><i class="icon icon-link"></i></span>
+							</span>
+						</a>
+					</div>
+				</li>
+				
+				<?php endif; ?>
+			<?php endforeach ?>
+			
+		</ul>
+	</div>
+<?php endif ?>
+					

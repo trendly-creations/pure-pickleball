@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<layout version="0.1.0">
+	<default>
+		<reference name="before_body_end">
+			<block type="core/template" name="theme.js" template="theme/js.phtml" before="-"/>
+		</reference>
+		<reference name="top.menu">
+			<action method="unsetChild" ifconfig="megamenu/general/enabled">
+                <name>catalog.topnav</name>
+            </action>
+            <block type="megamenu/megamenu" name="megamenu"/>
+        </reference>
+		<reference name="megamenu">
+			<action method="setTemplate" ifconfig="megamenu/general/enabled">
+                <template>megamenu/navigation.phtml</template>
+            </action>
+		</reference>
+	</default>
+	
+	<cms_index_index>
+		<reference name="head">
+			<action method="addCss"><stylesheet>rs-plugin/css/settings.css</stylesheet></action>
+		</reference>
+		<!--reference name="top.container">
+			<block type="core/template" name="home.slider" template="theme/slider.phtml"/>
+		</reference-->
+		
+		<reference name="before_footer">
+			<block type="core/template" name="home.parallax" template="theme/before_footer.phtml"/>
+		</reference>
+	</cms_index_index>
+	
+	<catalog_category_default>
+		<reference name="left">
+			<block type="cms/block" name="left-banner">
+                <action method="setBlockId"><block_id>jollyany_left_banner</block_id></action>
+            </block>
+		</reference>
+		
+		<reference name="right">
+			<block type="cms/block" name="right-banner">
+                <action method="setBlockId"><block_id>jollyany_right_banner</block_id></action>
+            </block>
+		</reference>
+	</catalog_category_default>
+	
+	<catalog_category_layered>
+		<reference name="left">
+			<block type="cms/block" name="left-banner">
+                <action method="setBlockId"><block_id>jollyany_left_banner</block_id></action>
+            </block>
+		</reference>
+		
+		<reference name="right">
+			<block type="cms/block" name="right-banner">
+                <action method="setBlockId"><block_id>jollyany_right_banner</block_id></action>
+            </block>
+		</reference>
+	</catalog_category_layered>
+	
+	<catalog_product_view>
+		<reference name="left">
+			<block type="cms/block" name="left-banner">
+                <action method="setBlockId"><block_id>jollyany_left_banner</block_id></action>
+            </block>
+		</reference>
+		
+		<reference name="right">
+			<block type="cms/block" name="right-banner">
+                <action method="setBlockId"><block_id>jollyany_right_banner</block_id></action>
+            </block>
+		</reference>
+	</catalog_product_view>
+</layout>

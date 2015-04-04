@@ -1,0 +1,87 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<?php 
+	if(Mage::getStoreConfig('jollyanytheme/general/layout')=='boxed'){
+		$layoutStyle = 'boxed';
+		$backgroundPath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'jollyany/background/'.Mage::getStoreConfig('jollyanytheme/general/background');
+		$backgroundImage = 'style="background-image:url('.$backgroundPath.')"';
+	}
+	else{
+		$layoutStyle = '';
+		$backgroundImage = '';
+	}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$layoutStyle.$this->getBodyClass().'"':$layoutStyle ?> <?php echo $backgroundImage ?><?php if($layoutStyle=='boxed'): ?> id="boxed"<?php endif ?>>
+	<?php if($layoutStyle=='boxed'): ?>
+		<div id="wrapper" class="container">
+	<?php endif ?>
+	<?php echo $this->getChildHtml('after_body_start') ?>
+	<?php echo $this->getChildHtml('header') ?>
+	<?php echo $this->getChildHtml('breadcrumbs') ?>
+	<?php echo $this->getChildHtml('global_messages') ?>
+	<section class="blog-wrapper">
+		<div class="container">
+			
+			
+			<div id="left-sidebar" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<?php echo $this->getChildHtml('left') ?>
+			</div>
+			
+			<div class="shop_wrapper col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<?php echo $this->getChildHtml('content') ?>
+				<?php echo $this->getChildHtml('before_footer') ?>
+			</div>
+		
+			<div id="sidebar" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<?php echo $this->getChildHtml('right') ?>
+			</div>
+		</div>
+		
+	</section>
+	<?php if($layoutStyle=='boxed'): ?>
+		</div>
+	<?php endif ?>
+	
+	
+
+	<?php echo $this->getChildHtml('footer') ?>
+	<?php echo $this->getChildHtml('global_cookie_notice') ?>
+	<?php echo $this->getAbsoluteFooter() ?>
+
+	<?php echo $this->getChildHtml('before_body_end') ?>
+</body>
+</html>

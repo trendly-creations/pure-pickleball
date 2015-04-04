@@ -1,0 +1,108 @@
+<script type="text/javascript">
+	<?php if($page = $this->getRequest()->getParam('p')): ?>
+		var curPage = <?php echo $page ?>;
+	<?php else: ?>
+		var curPage = 1;
+	<?php endif ?>
+	
+	var data = "";
+	var active = false;
+	
+	function shopMore(urlParam, maxpage){
+		urlParam = urlParam.replace(/\&/g,'ja-and-replace');
+		curPage++;
+		
+		url = '<?php echo $this->getUrl('jollyanytheme/index/ajax') ?>?url='+urlParam+'&page='+curPage;
+		
+		
+		jQuery(function($) {
+			$('#loadmore-waiting').show();
+			$('#showmore-container').toggleClass('loading');
+			$('#product-grid-container').toggleClass('loading');
+			try {
+				$.ajax({
+					url: url,
+					dataType: 'json',
+					type: 'post',
+					success: function(data) {
+						if (data.maincontent) {
+							$('#product-grid-container').append(data.maincontent);
+							$('#product-grid-container').toggleClass('loading');
+							$('#product-grid-container .shop_item').show('slow');
+							if(curPage>=maxpage){
+								$('#showmore-container').remove();
+							}
+							else{
+								if(data.newurl){
+									$('#shopmore').attr('href', data.newurl);
+								}
+							}
+							if(data.amount){
+								$('#number-to').html(data.amount);
+							}
+							$('#loadmore-waiting').hide();
+							$('#showmore-container').toggleClass('loading');
+							
+							$('.tooltips').tooltip({
+							  selector: "[data-toggle=tooltip]",
+							  container: "body"
+							});
+						}
+					}
+				})
+			} catch (e) {}
+		});
+	}
+
+	function sliderAjax(url) {
+		if (!active) {
+			active = true;
+			jQuery(function($) {
+				$('#product-grid-container').toggleClass('loading');
+				var viewport = {
+					width : $(window).width(),
+					height : $(document).height()
+				};
+
+				var width = viewport.width;
+				var height = viewport.height;
+				
+				oldUrl = url;
+				try {
+					$.ajax({
+						url: url,
+						dataType: 'json',
+						type: 'post',
+						data: data,
+						success: function(data) {
+							$('#product-grid-container').toggleClass('loading');
+							if (data.leftcontent) {
+								if ($('.block-layered-nav')) {
+									$('.block-layered-nav').empty();
+									$('.block-layered-nav').append(data.leftcontent);
+								}
+							}
+							if (data.maincontent) {
+								$('.shop_wrapper').empty();
+								$('.shop_wrapper').append(data.maincontent);
+								
+								$('.tooltips').tooltip({
+								  selector: "[data-toggle=tooltip]",
+								  container: "body"
+								});
+							}
+							var hist = url.split('?');
+							if(window.history && window.history.pushState){
+								window.history.pushState('GET', data.title, url);
+							}
+							
+						}
+					})
+				} catch (e) {}
+			});
+			active = false;
+		}
+		return false;
+	}
+</script>
+

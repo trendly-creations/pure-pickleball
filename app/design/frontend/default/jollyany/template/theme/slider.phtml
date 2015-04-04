@@ -1,0 +1,16 @@
+<?php $banner = Mage::getModel('cms/block')->getCollection()->addFieldToFilter('identifier', array('like'=>'jollyany_slider_%'))->setOrder('identifier', 'ASC'); ?>
+<?php if(count($banner)>0): ?>
+	<section class="slider-wrapper<?php if(Mage::getStoreConfig('jollyanytheme/general/layout')=='boxed'): ?> fullwidthbanner-container<?php endif ?>">
+		<div class="tp-banner-container">
+			<div class="<?php if(Mage::getStoreConfig('jollyanytheme/general/layout')=='boxed'): ?>fullwidthbanner<?php else:?>tp-banner<?php endif ?>" >
+				<ul>
+					<?php foreach($banner as $_item): ?>
+					<li data-transition="<?php echo Mage::getStoreConfig('jollyanytheme/slideshow/effect') ?>" data-slotamount="7" data-masterspeed="1500">
+						<?php echo $this->helper('jollyanytheme')->getSliderHtml($_item) ?>
+					</li>
+					<?php endforeach ?>
+				</ul>
+			</div>
+		</div>
+	</section>
+<?php endif ?>

@@ -1,0 +1,46 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $best = $this->helper('jollyanytheme')->getBestsellingProducts() ?>
+<?php if($best && count($best)>0): ?>
+<div class="widget">
+	<div class="title">
+		<h2><?php echo $this->__("Best Selling") ?></h2>
+	</div><!-- end title -->
+	<ul class="recent_posts_widget">
+		<?php $i=0; foreach($best as $_product): $i++ ?>
+			<li>
+				<a href="<?php echo $_product->getProductUrl() ?>">
+					<img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(600) ?>" alt="<?php echo $this->stripTags($_product->getName(), null, true) ?>" />
+					<?php echo $this->helper('catalog/output')->productAttribute($_product, $_product->getName() , 'name');?>
+				</a>
+				<a class="readmore" href="<?php echo $_product->getProductUrl() ?>"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(), true, false);?></a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+</div>
+<?php endif; ?>

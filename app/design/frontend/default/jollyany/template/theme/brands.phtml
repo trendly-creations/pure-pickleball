@@ -1,0 +1,18 @@
+<?php $brands = $this->getBrands(); ?>
+<?php if(count($brands)>0): ?>
+	<div class="general-title padding-top">
+		<h2><?php echo $this->__('Featured Brands') ?></h2>
+		<hr class="no-padding">
+	</div>
+	<div class="thumbnails clearfix">
+		<div id="brands" class="owl-carousel brands-carousel">
+			<?php foreach($brands as $brand): ?>
+				<div class="item">
+					<div class="entry">
+						<a href="<?php echo $brand->getContent()?>"><img class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'jollyany/brands/'.$brand->getFilename() ?>" alt="<?php echo $brand->getTitle() ?>"></a>
+					</div>
+				</div>
+			<?php endforeach ?>
+		</div>
+	</div>
+<?php endif ?>

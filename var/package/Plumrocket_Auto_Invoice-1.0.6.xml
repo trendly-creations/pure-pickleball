@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Plumrocket_Auto_Invoice</name>
+    <version>1.0.6</version>
+    <stability>stable</stability>
+    <license uri="http://wiki.plumrocket.net/wiki/EULA">End-user License Agreement</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Plumrocket Auto Invoice is a convenient Magento payment processing module that was designed to generate invoice automatically.</summary>
+    <description>Plumrocket Auto Invoice is a convenient Magento payment processing module that was designed to generate invoice automatically. After a client confirms his order the system will send the invoice automatically thus allowing website admin to avoid manual processing of payment transactions.</description>
+    <notes>Some minor fixes.</notes>
+    <authors><author><name>Plumrocket Team</name><user>plumrocket</user><email>support@plumrocket.com</email></author></authors>
+    <date>2014-09-02</date>
+    <time>09:54:34</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Plumrocket_AutoInvoice.xml" hash="4175c594cc76ab389dffeddd37edcd5c"/></dir></target><target name="magecommunity"><dir name="Plumrocket"><dir name="AutoInvoice"><dir name="Block"><dir name="System"><dir name="Config"><file name="Version.php" hash="3adcf7698f60ef53547cb6259797668c"/></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="2442a8b87cb8d2b97f7418d0ce0a4287"/></dir><dir name="Model"><file name="Observer.php" hash="56ea505e811603c516f129451a0f7b4f"/><dir name="System"><dir name="Config"><dir name="Source"><file name="CaptureAmount.php" hash="28a27588ddd56fbbab43f09e31a9bac8"/></dir></dir></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="e45a29110a7ea4ed9e26535cca2f47a4"/><file name="config.xml" hash="641535bd3df9dfa064620e77f3053847"/><file name="system.xml" hash="38677f6b4a4ca2ecb55c9997c871159f"/></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php><package><name>Plumrocket_Base</name><channel>community</channel><min></min><max></max></package></required></dependencies>
+</package>

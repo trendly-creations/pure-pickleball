@@ -1,0 +1,73 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Cart cross sell items template
+ *
+ * @see Mage_Checkout_Block_Cart_Crosssell
+ */
+?>
+<?php if($this->getItemCount()): ?>
+<div class="carousel_wrapper padding-top">
+	<div class="title">
+		<h2><?php echo $this->__('You may be interested in the following items:');?></h2>
+	</div><!-- end title -->
+</div>
+<div class="margin-top">
+	<div id="owl_shop_carousel_1" class="owl-carousel">
+		<?php foreach ($this->getItems() as $_item): ?>
+			<div class="shop_carousel">
+				<div class="shop_item">
+					<div class="entry">
+						<?php if($_item->getProductLabel()): ?>
+							<div class="triangle <?php echo strtolower($_item->getAttributeText('product_label')) ?>">
+								<span class="onsale"><?php echo $_item->getAttributeText('product_label') ?></span>
+							</div>
+						<?php endif ?>
+						<img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(800) ?>" alt="" class="img-responsive">
+						<div class="magnifier">
+							<div class="buttons">
+								<a class="st btn btn-default" rel="bookmark" href="<?php echo $this->helper('checkout/cart')->getAddUrl($_item); ?>"><?php echo $this->__('Add to Cart');?></a>
+							</div><!-- end buttons -->
+						</div><!-- end magnifier -->
+					</div><!-- end entry -->
+					<div class="shop_desc">
+						<div class="shop_title pull-left">
+							<a href="<?php echo $_item->getProductUrl() ?>"><span><?php echo $_item->getName() ?></span></a>
+							<?php $_product = Mage::getModel('catalog/product')->load($_item->getId());?>
+							<span class="cats"><span class="cats"><?php //echo $this->helper('jollyanytheme')->getCategoriesOfProduct($_product) ?></span></span>
+						</div>
+						<span class="price pull-right">
+							<?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?>
+						</span>
+					</div><!-- end shop_desc -->
+				</div><!-- end item -->
+			</div><!-- end shop carousel -->
+		<?php endforeach; ?>
+	</div>
+</div>
+<?php endif; ?>

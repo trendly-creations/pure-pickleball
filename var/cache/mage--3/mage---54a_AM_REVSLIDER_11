@@ -1,0 +1,93 @@
+<div id='rev_slider_1_wrapper' class='rev_slider_wrapper fullwidthbanner-container' style='margin:0px auto;background-color:#E9E9E9;padding:0px;margin-top:0px;margin-bottom:0px;max-height:500px;'><div id='rev_slider_1' class='rev_slider fullwidthabanner' style='display:none;max-height:500px;height:500px;'><ul><li data-transition='parallaxtobottom' data-slotamount='7' data-masterspeed='500' data-saveperformance='off'  ><img src='http://purepickleball.com/js/am/revslider/rs-plugin/images/dummy.png' style='background-color:#FFFFFF' data-lazyload='http://purepickleball.com/js/am/revslider/rs-plugin/images/transparent.png' data-bgposition=''  data-bgfit='' data-bgrepeat=''  /><div    class='tp-caption mediumwhitebg tp-fade fadeout  rs-parallaxlevel-2 ' data-x='center' data-hoffset='1'  data-y='center' data-voffset='4'  data-endspeed='500'  data-speed='500' data-start='500' data-easing='Linear.easeNone' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2;'><img src='http://purepickleball.com/js/am/revslider/rs-plugin/images/dummy.png' alt=''   data-lazyload='http://purepickleball.com/media/wysiwyg/pickleball_1.jpg'/></div></li><li data-transition='random' data-slotamount='7' data-masterspeed='500' data-saveperformance='off'  ><img src='http://purepickleball.com/js/am/revslider/rs-plugin/images/dummy.png' style='background-color:#FFFFFF' data-lazyload='http://purepickleball.com/js/am/revslider/rs-plugin/images/transparent.png' data-bgposition=''  data-bgfit='' data-bgrepeat=''  /><div    class='tp-caption medium_grey tp-fade rs-parallaxlevel-5 ' data-x='-268'  data-y='-1'  data-endspeed='500'  data-speed='500' data-start='500' data-easing='Linear.easeNone' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2;'><img src='http://purepickleball.com/js/am/revslider/rs-plugin/images/dummy.png' alt=''   data-lazyload='http://purepickleball.com/media/wysiwyg/pickleball_3.jpg'/></div></li></ul><div class="tp-bannertimer"></div></div></div><script type="text/javascript">delete window["console"];</script><script type='text/javascript' src='http://purepickleball.com/js/am/revslider/rs-plugin/js/jquery.themepunch.tools.min.js?v=4.5.9'></script>
+<script type='text/javascript' src='http://purepickleball.com/js/am/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js?v=4.5.9'></script>
+<link type='text/css' rel='stylesheet' href='http://purepickleball.com/js/am/revslider/rs-plugin/css/settings.css?v=4.5.9'/>
+<link type='text/css' rel='stylesheet' href='http://purepickleball.com/revslider/index/getCssCaptions/id/1/?___SID=U'/>
+<script type='text/javascript'>
+        var setREVStartSize = function(){
+            var	tpopt = new Object();
+            tpopt.startwidth = 900;
+            tpopt.startheight = 500;
+            tpopt.container = jQuery('#rev_slider_1');
+            tpopt.fullScreen = 'off';
+            tpopt.forceFullWidth = 'off';
+
+            tpopt.container.closest('.rev_slider_wrapper').css({height:tpopt.container.height()});tpopt.width=parseInt(tpopt.container.width(),0);tpopt.height=parseInt(tpopt.container.height(),0);tpopt.bw=tpopt.width/tpopt.startwidth;tpopt.bh=tpopt.height/tpopt.startheight;if(tpopt.bh>tpopt.bw)tpopt.bh=tpopt.bw;if(tpopt.bh<tpopt.bw)tpopt.bw=tpopt.bh;if(tpopt.bw<tpopt.bh)tpopt.bh=tpopt.bw;if(tpopt.bh>1){tpopt.bw=1;tpopt.bh=1}if(tpopt.bw>1){tpopt.bw=1;tpopt.bh=1}tpopt.height=Math.round(tpopt.startheight*(tpopt.width/tpopt.startwidth));if(tpopt.height>tpopt.startheight&&tpopt.autoHeight!='on')tpopt.height=tpopt.startheight;if(tpopt.fullScreen=='on'){tpopt.height=tpopt.bw*tpopt.startheight;var cow=tpopt.container.parent().width();var coh=jQuery(window).height();if(tpopt.fullScreenOffsetContainer!=undefined){try{var offcontainers=tpopt.fullScreenOffsetContainer.split(',');jQuery.each(offcontainers,function(e,t){coh=coh-jQuery(t).outerHeight(true);if(coh<tpopt.minFullScreenHeight)coh=tpopt.minFullScreenHeight})}catch(e){}}tpopt.container.parent().height(coh);tpopt.container.height(coh);tpopt.container.closest('.rev_slider_wrapper').height(coh);tpopt.container.closest('.forcefullwidth_wrapper_tp_banner').find('.tp-fullwidth-forcer').height(coh);tpopt.container.css({height:'100%'});tpopt.height=coh}else{tpopt.container.height(tpopt.height);tpopt.container.closest('.rev_slider_wrapper').height(tpopt.height);tpopt.container.closest('.forcefullwidth_wrapper_tp_banner').find('.tp-fullwidth-forcer').height(tpopt.height)};
+        };
+
+        setREVStartSize();
+        var revapi1;
+
+        jQuery(document).ready(function(){
+            revapi1 = jQuery('#rev_slider_1').show().revolution({
+                dottedOverlay: 'none',
+                delay: 9000,
+                startwidth: 900,
+                startheight: 500,
+
+                hideThumbs: 200,
+                thumbWidth: 100,
+                thumbHeight: 50,
+                thumbAmount: 1,
+
+                navigationType: 'bullet',
+                navigationArrows: '',
+                navigationStyle: 'round',
+
+                touchenabled: 'on',
+                onHoverStop: 'on',
+        
+                swipe_velocity: 0.7,
+                swipe_min_touches: 1,
+                swipe_max_touches: 1,
+                drag_block_vertical: false,
+            
+                parallax: 'scroll',
+                parallaxBgFreeze: 'off',
+                parallaxLevels: [5,10,15,20,25,30,35,40,45,50],
+            
+            spinner: 'spinner3',
+            keyboardNavigation: 'on',
+
+            navigationHAlign: 'center',
+            navigationVAlign: 'bottom',
+            navigationHOffset: 0,
+            navigationVOffset: 20,
+
+            soloArrowLeftHalign: 'left',
+            soloArrowLeftValign: 'center',
+            soloArrowLeftHOffset: 20,
+            soloArrowLeftVOffset: 0,
+
+            soloArrowRightHalign: 'right',
+            soloArrowRightValign: 'center',
+            soloArrowRightHOffset: 20,
+            soloArrowRightVOffset: 0,
+
+            shadow: 2,
+            fullWidth: 'on',
+            fullScreen: 'off',
+
+            stopLoop: 'off',
+            stopAfterLoops: -1,
+            stopAtSlide: -1,
+
+            shuffle: 'off',
+        
+                autoHeight: 'off',
+            
+                forceFullWidth: 'off',
+            
+                hideNavDelayOnMobile: 1500,
+            
+                hideThumbsOnMobile: 'off',
+                hideBulletsOnMobile: 'off',
+                hideArrowsOnMobile: 'off',
+                hideThumbsUnderResolution: 0,
+
+                hideSliderAtLimit: 0,
+                hideCaptionAtLimit: 0,
+                hideAllCaptionAtLilmit: 0,
+                startWithSlide: 0
+            });
+        });
+        </script><style type='text/css'>#rev_slider_1_wrapper .tp-loader.spinner3 div{background-color:#FFFFFF !important;}</style>

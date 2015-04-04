@@ -1,0 +1,22 @@
+<div class="dmtop">Scroll to Top</div>
+<script src="<?php echo $this->getSkinUrl('js/menu.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/owl.carousel.min.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/jquery.parallax-1.1.3.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/jquery.simple-text-rotator.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/wow.min.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/jquery.fitvids.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/custom.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/jquery.isotope.min.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/custom-portfolio.js') ?>"></script>
+<script src="<?php echo $this->getSkinUrl('rs-plugin/js/jquery.themepunch.plugins.min.js') ?>"></script>
+
+<?php if(Mage::registry('current_product')): ?>
+	<script src="<?php echo $this->getSkinUrl('js/jquery.prettyPhoto.js') ?>"></script>
+	<script type="text/javascript">
+		jQuery('a[data-gal]').each(function() {
+			jQuery(this).attr('rel', jQuery(this).data('gal'));
+		});  	
+		jQuery("a[data-gal^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',slideshow:false,overlay_gallery: false,theme:'light_square',social_tools:false,deeplinking:false});
+	</script>
+<?php endif ?>
+

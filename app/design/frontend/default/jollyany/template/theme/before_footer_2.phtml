@@ -1,0 +1,11 @@
+<?php $parallax = Mage::getModel('cms/block')->load('jollyany-our-brands'); ?>
+<?php if($parallax->getId() && $parallax->getIsActive() && $parallax->getContent()!=''): ?>
+	<?php $backgroundImage = $this->helper('jollyanytheme')->getOurBrandBackground() ?>
+	<section id="one-parallax" class="parallax" data-stellar-vertical-offset="20" data-stellar-background-ratio="0.6" style="background-image: url('<?php echo $backgroundImage ?>');">
+
+		<div class="overlay">
+			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('jollyany-our-brands')->toHtml() ?>
+		</div>
+	</section>
+<?php endif ?>
+

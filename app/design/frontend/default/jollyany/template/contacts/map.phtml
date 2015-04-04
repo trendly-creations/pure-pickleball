@@ -1,0 +1,21 @@
+<section class="post-wrapper-top jt-shadow clearfix">
+	<div class="container">
+		<div class="col-lg-12">
+			<h1><?php echo $this->__('Contact Us') ?></h1>
+			<ul class="breadcrumb pull-right">
+				<li><a href="<?php $this->getBaseUrl() ?>"><?php echo $this->__('Home') ?></a></li>
+				<li><?php echo $this->__('Contact Us') ?></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<?php if(Mage::getStoreConfig('jollyanytheme/contact/enabled')): ?>
+	<?php $latitude = Mage::getStoreConfig('jollyanytheme/contact/latitude') ?>
+	<?php $longitude = Mage::getStoreConfig('jollyanytheme/contact/longitude') ?>
+	<?php if(($latitude != '') && ($longitude != '')): ?>
+		<section class="white-wrapper nopadding">
+			<div id="map"></div>
+			<div class="clearfix"></div>
+		</section>
+	<?php endif ?>
+<?php endif ?>

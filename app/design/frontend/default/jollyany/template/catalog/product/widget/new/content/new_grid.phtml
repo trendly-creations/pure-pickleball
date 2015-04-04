@@ -1,0 +1,84 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+<?php $columnCount = $this->getColumnCount() ?>
+<div class="carousel_wrapper">
+	<div class="title">
+		<h2><?php echo $this->__('New Products') ?></h2>
+	</div><!-- end title -->
+
+	<div class="margin-top">
+		<div id="owl_shop_carousel" class="owl-carousel owl-carousel<?php if($columnCount):?><?php echo $columnCount ?><?php endif ?>">
+			<?php $i=0; foreach ($_products->getItems() as $_product): ?>
+				<div class="shop_carousel">
+					<div class="shop_item">
+						<div class="entry">
+							<?php if($_product->getProductLabel()): ?>
+								<div class="triangle <?php echo strtolower($_product->getAttributeText('product_label')) ?>">
+									<span class="onsale"><?php echo $_product->getAttributeText('product_label') ?></span>
+								</div>
+							<?php endif ?>
+							<img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(600) ?>" alt="<?php echo $this->stripTags($_product->getName(), null, true) ?>" />
+							<div class="magnifier">
+								<div class="buttons">
+									<?php if ($_product->isSaleable()): ?>
+									<a class="st btn btn-default" rel="bookmark" href="<?php echo $this->getAddToCartUrl($_product) ?>"><?php echo $this->__('Add to Cart') ?></a>
+									<?php endif?>
+									<p class="tooltips">
+										<?php if ($this->helper('wishlist')->isAllow()) : ?>
+											<a class="st wishlist-link" href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" data-placement="bottom" data-toggle="tooltip" data-original-title="<?php echo $this->__('Wishlist') ?>">
+												<span class="fa fa-heart"></span>
+											</a>
+										<?php endif; ?>
+										
+										<?php if($_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+											<a class="st" href="<?php echo $_compareUrl ?>" data-placement="bottom" data-toggle="tooltip" data-original-title="<?php echo $this->__('Compare') ?>">
+												<span class="fa fa-retweet"></span>
+											</a>
+										<?php endif; ?>
+									</p>
+								</div><!-- end buttons -->
+							</div><!-- end magnifier -->
+						</div><!-- end entry -->
+						<div class="shop_desc">
+							<div class="shop_title">
+								<a href="<?php echo $_product->getProductUrl() ?>"><span><?php echo $this->helper('catalog/output')->productAttribute($_product, $_product->getName() , 'name');?></span></a>
+								<span class="cats"><?php echo $this->helper('jollyanytheme')->getCategoriesOfProduct($_product) ?></span>
+							</div>
+							<?php echo $this->getPriceHtml($_product, true, '-widget-new-grid') ?>
+						</div><!-- end shop_desc -->
+					</div><!-- end item -->
+				</div><!-- end shop carousel -->
+			<?php endforeach; ?>
+		</div><!-- end owl_blog_three_line -->
+	</div><!-- end padding-top -->
+</div><!-- end carousel_wrapper -->
+
+<div class="clearfix"></div>
+
+<hr>
+<?php endif; ?>
